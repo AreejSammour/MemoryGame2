@@ -1,0 +1,383 @@
+/* Base styles - your existing styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styles for header */
+.siteheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+  color: white;
+  height: 70px;
+}
+
+.logo {
+  color: #f3d963;
+  font-size: 24px;
+}
+
+.logoIcon {
+  width: 25px;
+  height: 25px;
+  padding-right: 10px;
+}
+
+.navmenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navmenu li {
+  margin-right: 20px;
+}
+
+.headeranchor {
+  color: rgb(180, 180, 180);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.headeranchor:hover {
+  text-decoration: underline;
+  background-color: #f3d963;
+  color: #000;
+}
+
+/* Styles for Hero-area */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+}
+
+#slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #ddd;
+}
+
+#slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.hero-container .slider-heading {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the heading */
+  font-size: 3rem; 
+  color: #fff; 
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 10; /* Ensure heading is above slider */
+  text-align: center; /* Center text horizontally */
+  width: 100%; /* Ensure heading spans the width of the slider */
+}
+
+/* Styles for Game main section */
+.game-selection {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 100px;
+}
+
+.levels {
+  margin: 20px 0;
+}
+
+.level-btn {
+  background-color: #f5de92;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.level-btn:hover {
+  background-color: #e1c341;
+}
+
+.time-selection {
+  margin-bottom: 20px;
+}
+
+#time-interval{
+  padding: 7px 10px;
+  background-color: #f5f1de;
+  border-radius: 5px;
+}
+
+#message {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px; /* Space between cards */
+  justify-content: center; /* Center the grid horizontally */
+  padding: 20px;
+  max-width: 900px; /* Adjust based on your layout */
+  margin: 0 auto; /* Center horizontally */
+  margin-top: 20px; /* Space above the game board */
+}
+
+#game-board.level-advanced {
+  grid-template-columns: repeat(6, 1fr); /* 6 columns for advanced */
+}
+
+#game-board.level-intermediate {
+  grid-template-columns: repeat(6, 1fr); /* 6 columns for intermediate */
+}
+
+
+#game-board .card {
+  width: 100%;
+  height: 170px; /* Adjust the height of the cards */
+  background-image: url('/img/BG2.jpg');
+  background-size: cover; /* Cover the card area */
+  background-position: center; /* Center the background image */
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+  perspective: 1000px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#game-board .card:hover {
+  transform: rotateY(-15deg) rotateX(-15deg);
+}
+
+#game-board .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#game-board .card.flipped img {
+  display: block;
+}
+
+#game-board .card .front, #game-board .card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+
+#game-board .card .front {
+  background-color: #f3d963; /* Color of the front face */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-board .card .back {
+  transform: rotateY(180deg);
+}
+
+#game-board .card.flipped .front {
+  transform: rotateY(180deg);
+}
+
+#game-board .card.flipped .back {
+  transform: rotateY(0);
+}
+
+#start-game-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none; 
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; 
+  font-size: 1rem; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease;
+}
+
+#start-game-btn:hover {
+  background-color: #307034; 
+}
+
+#start-game-btn:active {
+  background-color: #388e3c; 
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #f3d963;
+  margin-top: auto;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+  .hero-container {
+    height: 50vh;
+  }
+
+  #game-board {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 450px;
+  }
+
+  #game-board .card {
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    height: 40vh;
+  }
+
+  .siteheader {
+    flex-direction: column;
+    height: auto;
+    
+  }
+
+  .navmenu {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .navmenu li {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
+  #game-board {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 300px;
+  }
+
+  #game-board .card {
+    height: 100px;
+  }
+
+  .level-btn, #start-game-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+
+  #message {
+    font-size: 1.2rem;
+  }
+
+  #game-board.level-advanced {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  #game-board.level-intermediate {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    height: 30vh;
+  }
+
+  .slider-heading {
+    font-size: 1.5rem;
+  }
+
+  #game-board {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 200px;
+  }
+
+  #game-board .card {
+    height: 80px;
+  }
+
+  .level-btn, #start-game-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  #message {
+    font-size: 1rem;
+  }
+}
+
+#game-description {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #edf0ec;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(134, 93, 17), 0 0 5px darkblue;
+}
+
+.footerlink {
+  color: inherit; 
+  text-decoration: none; 
+}
+
+.footerlink:hover {
+  text-decoration: underline;
+  color: #ddd;
+  font-size: 1.1em;
+}
+
+#faceicon{
+  width: 25px;
+  height: 25px;
+}

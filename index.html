@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Memory Game Online – Free, Fun, and Brain Boosting</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+  <header class="siteheader">
+    <div class="logo">
+      <img src="img/memory-card.png" alt="memory card image" class="logoIcon">
+        AS-MemoryGames             
+    </div>
+    <nav>
+        <ul class="navmenu">
+          <li><a class="headeranchor" href="#" id="beginner-btn1">Beginner</a></li>
+          <li><a class="headeranchor" href="#" id="intermediate-btn1">Intermediate</a></li>
+          <li><a class="headeranchor" href="#" id="advanced-btn1">Advanced</a></li>
+          <li><a class="headeranchor" href="mailto:areej_sammour@hotmail.com?subject=Subject Here&body=Message Here">Contact Me</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <div class="hero-container">
+    <h1 class="slider-heading">Memory Games</h1> <!-- Heading over the slider -->
+    <div id="slider">
+        <div id="slides"></div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+
+  <main class="game-selection">
+    <h1>Select a Level</h1>
+    <div class="levels">
+      <button class="level-btn" id="beginner-btn">Beginner</button>
+      <button class="level-btn" id="intermediate-btn">Intermediate</button>
+      <button class="level-btn" id="advanced-btn">Advanced</button>
+    </div>
+    <div id="game-container" class="game-container">
+      <div id="game-board">
+        <!-- Game cards will be dynamically added here -->
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Copyright 2024 by (<a class="footerlink" href="mailto:areej_sammour@hotmail.com?subject=Hello&body=I%20would%20like%20to%20contact%20you.">Areej Sammour</a>)
+
+  </footer>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
