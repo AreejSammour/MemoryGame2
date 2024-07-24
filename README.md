@@ -25,7 +25,7 @@
 <ul>
   <li>Frontend:</li>
     <ul>
-      <li>HTML, CSS, JavaScript</li>
+      <li>HTML, CSS, Vanilla JS/ Javascript</li>
       <li>Responsive web design</li>
     </ul>
 
